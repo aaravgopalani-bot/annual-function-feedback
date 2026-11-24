@@ -1,22 +1,8 @@
-const stars = document.querySelectorAll(".star-rating span");
 
-stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
+// =====================================
+// 1. STAR RATING FUNCTIONALITY
+// =====================================
 
-        stars.forEach((s, i) => {
-
-            if (i <= index) {
-                s.textContent = "★";
-                s.style.color = "gold";
-            } else {
-                s.textContent = "☆";
-                s.style.color = "lightgray";
-            }
-
-        });
-
-    });
-});
 const ratingGroups = document.querySelectorAll(".stars");
 
 ratingGroups.forEach((group) => {
@@ -24,6 +10,8 @@ ratingGroups.forEach((group) => {
 
     stars.forEach((star, index) => {
         star.addEventListener("click", () => {
+
+            group.dataset.selected = index + 1;
 
             stars.forEach((s, i) => {
                 if (i <= index) {
@@ -38,24 +26,39 @@ ratingGroups.forEach((group) => {
         });
     });
 });
-// Reset all star ratings when Reset button is clicked
+
+
+// =====================================
+// 2. RESET BUTTON
+// =====================================
+
 const form = document.querySelector("form");
 
 form.addEventListener("reset", () => {
-    document.querySelectorAll(".stars span").forEach((star) => {
-        star.textContent = "☆";
-        star.style.color = "#B8860B";
+
+    document.querySelectorAll(".stars").forEach((group) => {
+        delete group.dataset.selected;
+
+        group.querySelectorAll("span").forEach((star) => {
+            star.textContent = "☆";
+            star.style.color = "#B8860B";
+        });
     });
+
 });
+
+
+// =====================================
+// 3. SUBMIT VALIDATION
+// =====================================
+
 form.addEventListener("submit", (event) => {
 
     const ratingGroups = document.querySelectorAll(".stars");
     let allRated = true;
 
     ratingGroups.forEach((group) => {
-        const selectedStar = group.querySelector("span[style*='gold']");
-
-        if (!selectedStar) {
+        if (!group.dataset.selected) {
             allRated = false;
         }
     });
@@ -72,32 +75,71 @@ form.addEventListener("submit", (event) => {
     if (liked === "" || improvement === "") {
         event.preventDefault();
         alert("Please complete both review questions!");
+        return;
     }
 
 });
+
+
+// =====================================
+// 4. DIVISION DROPDOWN
+// =====================================
+
 const standard = document.getElementById("Standard");
 const division = document.getElementById("Division");
 
 standard.addEventListener("change", function () {
 
-    division.innerHTML = '<option value="" disabled selected>Select Division</option>';
+    division.innerHTML =
+        '<option value="" disabled selected>Select Division</option>';
 
     let divisions = [];
 
-    if (standard.value >= 1 && standard.value <= 5) {
-        divisions = ["Sun", "Moon", "Star"];
+    // Nursery, LKG, UKG, Jr. KG, Sr. KG and Classes 1–5
+
+    if (
+        standard.value === "Nursery" ||
+        standard.value === "LKG" ||
+        standard.value === "UKG" ||
+        standard.value === "Jr. KG" ||
+        standard.value === "Sr. KG" ||
+        (Number(standard.value) >= 1 &&
+         Number(standard.value) <= 5)
+    ) {
+        divisions = ["Star", "Sun", "Moon", "Venus"];
     }
-    else if (standard.value >= 6 && standard.value <= 10) {
+
+    // Classes 6–10
+
+    else if (
+        Number(standard.value) >= 6 &&
+        Number(standard.value) <= 10
+    ) {
         divisions = ["A", "B", "C", "D", "E"];
     }
-    else if (standard.value == 11 || standard.value == 12) {
-    divisions = ["Commerce A", "Commerce B", "Science", "Humanities"];
-}
+
+    // Classes 11 and 12
+
+    else if (
+        standard.value === "11" ||
+        standard.value === "12"
+    ) {
+        divisions = [
+            "Commerce A",
+            "Commerce B",
+            "Humanities",
+            "Science"
+        ];
+    }
+
     divisions.forEach(function (item) {
+
         let option = document.createElement("option");
         option.value = item;
         option.textContent = item;
+
         division.appendChild(option);
+
     });
 
 });
