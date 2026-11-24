@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review and feedaback system</title>
+</head>
+<body>
+ <img class="school-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkM5sY4LW0p5vemj52JHkyZe9iLADmkr3dTv8LCciVeA&s=10" alt="">
+    <div class="welcome-text">
+        <h1>Review and Feedback System</h1>
+        <h2>Your Voice Matters!</h2>
+        <p>Share your experience with us and help us make future events even better.</p>
+    </div>
+        <form action="thankyou.html" method="GET">
+    <div class="personal-details" style="text-align: center;">
+           <div class="personal-details" style="text-align: center;">
+
+    <label for="parentName">Parent's Name:</label><br>
+    <input type="text" id="parentName" name="parentName"
+    placeholder="Enter parent's full name" required><br>
+    <label for="studentName">Student's Name:</label><br>
+    <input type="text" id="studentName" name="studentName"
+    placeholder="Enter student's full name" required><br>
+    <label for="Standard">Standard:</label><br>
+    <select id="Standard" name="Standard" required>
+        <option value="" disabled selected>Select Standard</option>
+        <option value="Nursery">Nursery</option>
+        <option value="LKG">LKG</option>
+        <option value="UKG">UKG</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select><br>
+    <label for="Division">Division:</label><br>
+<select id="Division" name="Division" required>
+    <option value="" disabled selected>Select Division</option>
+</select><br>
+</div>
+       </div>
+    <div class="ratings" style="text-align: center;">
+    <h2>Rate Your Experience</h2>
+
+    <h3>1. Students' Performance</h3>
+    <div class="stars">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+    </div>
+
+    <h3>2. Sound and Lighting</h3>
+    <div class="stars">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+    </div>
+
+    <h3>3. Sitting Arrangement</h3>
+    <div class="stars">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span>
+    </div>
+
+    <h3>4. Decoration</h3>
+    <div class="stars">
+        <span data-value="1">☆</span>
+        <span data-value="2">☆</span>
+        <span data-value="3">☆</span>
+        <span data-value="4">☆</span>
+        <span data-value="5">☆</span><br>
+        <button type="submit" class="submit-btn">Submit</button>
+    </div>
+    </div>
+    <div class="reviews" style="text-align: center;">
+    <h2>Reviews and Suggestions</h2>
+
+    <label for="liked">What did you like most about the annual function?</label>
+    <textarea id="liked" name="liked"
+    placeholder="Write your answer here..."></textarea><br>
+    <label for="improvement">What can we improve?</label>
+    <textarea id="improvement" name="improvement"
+    placeholder="Share your suggestions..."></textarea><br>
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+    <button type="reset" class="reset-btn">Reset</button>   
+</form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

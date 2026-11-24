@@ -1,0 +1,341 @@
+body{
+    background-color:whitesmoke;
+}
+.school-logo {
+    width: auto;
+    height: 90px;
+    display: block;
+    margin-left: auto;
+}
+
+.welcome-text {
+    text-align: center;
+}
+.submit-btn {
+    background-color: #198754;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.star-rating span {
+    font-size: 30px;
+    margin: 5px;
+    color: gold;
+    cursor: pointer;
+}
+.stars span {
+    font-size: 32px;
+    margin: 5px;
+    color: #B8860B;
+    cursor: pointer;
+}
+
+/* Overall Website Design */
+body {
+    background-color: #F3F6FC;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #183B67;
+}
+
+/* School Logo */
+.school-logo {
+    width: auto;
+    height: 90px;
+    display: block;
+    margin-left: auto;
+}
+
+/* Welcome Section */
+.welcome-text {
+    text-align: center;
+    color: #183B67;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #183B67;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Reset Button */
+.reset-btn {
+    background-color: #B8860B;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Star Ratings */
+.stars span {
+    font-size: 32px;
+    margin: 5px;
+    color: #B8860B;
+    cursor: pointer;
+}
+
+/* =================================
+   1. GENERAL WEBSITE DESIGN
+================================= */
+
+body {
+    background-color: #F3F6FC;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #26364A;
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+}
+
+
+/* =================================
+   2. SCHOOL LOGO
+================================= */
+
+.school-logo {
+    width: auto;
+    height: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+/* =================================
+   3. WELCOME SECTION
+================================= */
+
+.welcome-text {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.welcome-text h1 {
+    color: #183B67;
+    font-size: 34px;
+}
+
+.welcome-text h2 {
+    color: #B8860B;
+    font-size: 25px;
+}
+
+.welcome-text p {
+    color: #52647A;
+    font-size: 16px;
+}
+
+
+/* =================================
+   4. SECTION HEADINGS
+================================= */
+
+h2 {
+    color: #183B67;
+}
+
+h3 {
+    color: #B8860B;
+}
+
+
+/* =================================
+   5. PERSONAL DETAILS SECTION
+================================= */
+
+.personal-details {
+    background-color: #FFFFFF;
+    color: #183B67;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+}
+
+.personal-details label {
+    color: #183B67;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.personal-details input {
+    width: 80%;
+    padding: 11px;
+    margin: 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #26364A;
+    background-color: #F8FAFD;
+}
+
+
+/* =================================
+   6. RATINGS SECTION
+================================= */
+
+.ratings {
+    background-color: #FFFFFF;
+    color: #26364A;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 12px;
+    max-width: 700px;
+    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+}
+
+.ratings h2 {
+    color: #183B67;
+}
+
+.ratings h3 {
+    color: #B8860B;
+}
+
+.stars span {
+    font-size: 32px;
+    margin: 5px;
+    color: #B8860B;
+    cursor: pointer;
+}
+
+
+/* =================================
+   7. REVIEWS AND SUGGESTIONS
+================================= */
+
+.reviews {
+    background-color: #FFFFFF;
+    color: #26364A;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 12px;
+    max-width: 700px;
+    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+}
+
+.reviews h2 {
+    color: #183B67;
+}
+
+.reviews label {
+    color: #183B67;
+    font-weight: bold;
+    display: block;
+    margin: 15px 0 8px;
+}
+
+.reviews textarea {
+    width: 85%;
+    min-height: 90px;
+    padding: 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #26364A;
+    background-color: #F8FAFD;
+    resize: vertical;
+}
+
+
+/* =================================
+   8. INPUT AND TEXTAREA FOCUS
+================================= */
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid #183B67;
+    background-color: #FFFFFF;
+}
+
+
+/* =================================
+   9. SUBMIT BUTTON
+================================= */
+
+.submit-btn {
+    background-color: #183B67;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 12px;
+}
+
+.submit-btn:hover {
+    background-color: #102B4D;
+}
+
+
+/* =================================
+   10. RESET BUTTON
+================================= */
+
+.reset-btn {
+    background-color: #B8860B;
+    color: #FFFFFF;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 12px;
+}
+
+.reset-btn:hover {
+    background-color: #946B08;
+}
+
+
+/* =================================
+   11. THANK YOU PAGE
+================================= */
+
+.thankyou-container {
+    background-color: #FFFFFF;
+    color: #26364A;
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 40px 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(24, 59, 103, 0.12);
+    text-align: center;
+}
+
+.thankyou-container h1 {
+    color: #183B67;
+    font-size: 36px;
+}
+
+.thankyou-container h2 {
+    color: #B8860B;
+}
+
+.thankyou-container p {
+    color: #52647A;
+    font-size: 16px;
+}
