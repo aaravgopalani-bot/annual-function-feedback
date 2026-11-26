@@ -1,18 +1,38 @@
 
-// =====================================
-// 1. STAR RATING FUNCTIONALITY
-// =====================================
+ // =====================================
+ // 1. STAR RATING FUNCTIONALITY
+ // =====================================
 
 const ratingGroups = document.querySelectorAll(".stars");
 
+const ratingMessages = {
+    1: "Not Good",
+    2: "Needs Improvement",
+    3: "Average",
+    4: "Good",
+    5: "Excellent! Thank you!"
+};
+
 ratingGroups.forEach((group) => {
+
     const stars = group.querySelectorAll("span");
 
+    // Create feedback bubble
+    const feedback = document.createElement("div");
+    feedback.className = "rating-feedback";
+    feedback.setAttribute("aria-live", "polite");
+
+    group.insertAdjacentElement("afterend", feedback);
+
     stars.forEach((star, index) => {
+
         star.addEventListener("click", () => {
 
-            group.dataset.selected = index + 1;
+            const selectedRating = index + 1;
 
+            group.dataset.selected = selectedRating;
+
+            // Update star appearance
             stars.forEach((s, i) => {
                 if (i <= index) {
                     s.textContent = "★";
@@ -23,10 +43,18 @@ ratingGroups.forEach((group) => {
                 }
             });
 
-        });
-    });
-});
+            // Display feedback
+            feedback.textContent =
+                selectedRating + " Stars — " +
+                ratingMessages[selectedRating];
 
+            feedback.classList.add("show");
+
+        });
+
+    });
+
+});
 
 // =====================================
 // 2. RESET BUTTON
@@ -80,7 +108,6 @@ form.addEventListener("submit", (event) => {
 
 });
 
-
 // =====================================
 // 4. DIVISION DROPDOWN
 // =====================================
@@ -94,52 +121,70 @@ standard.addEventListener("change", function () {
         '<option value="" disabled selected>Select Division</option>';
 
     let divisions = [];
+    const selectedStandard = standard.value;
+    const classNumber = Number(selectedStandard);
 
-    // Nursery, LKG, UKG, Jr. KG, Sr. KG and Classes 1–5
-
+    // Nursery to Grade 3
     if (
-        standard.value === "Nursery" ||
-        standard.value === "LKG" ||
-        standard.value === "UKG" ||
-        standard.value === "Jr. KG" ||
-        standard.value === "Sr. KG" ||
-        (Number(standard.value) >= 1 &&
-         Number(standard.value) <= 5)
+        ["Nursery", "LKG", "UKG", "Jr. KG", "Sr. KG"].includes(selectedStandard) ||
+        (classNumber >= 1 && classNumber <= 3)
     ) {
-        divisions = ["Star", "Sun", "Moon", "Venus"];
+        divisions = [
+            "Star",
+            "Sun",
+            "Moon",
+            "Venus",
+            "Ruby (CIE)",
+            "Emerald (CIE)"
+        ];
     }
 
-    // Classes 6–10
-
-    else if (
-        Number(standard.value) >= 6 &&
-        Number(standard.value) <= 10
-    ) {
-        divisions = ["A", "B", "C", "D", "E"];
+    // Grade 4
+    else if (classNumber === 4) {
+        divisions = [
+            "Star",
+            "Sun",
+            "Moon",
+            "Venus"
+        ];
     }
 
-    // Classes 11 and 12
+    // Grade 5
+    else if (classNumber === 5) {
+        divisions = [
+            "Star",
+            "Sun",
+            "Moon",
+            "Venus",
+            "Ruby (CIE)",
+            "Emerald (CIE)"
+        ];
+    }
 
-    else if (
-        standard.value === "11" ||
-        standard.value === "12"
-    ) {
+    // Grades 6 to 10
+    else if (classNumber >= 6 && classNumber <= 10) {
+        divisions = [
+            "A", "B", "C", "D", "E",
+            "CIE"
+        ];
+    }
+
+    // Grades 11 and 12
+    else if (classNumber === 11 || classNumber === 12) {
         divisions = [
             "Commerce A",
             "Commerce B",
             "Humanities",
-            "Science"
+            "Science",
+            "CIE"
         ];
     }
 
     divisions.forEach(function (item) {
-
-        let option = document.createElement("option");
+        const option = document.createElement("option");
         option.value = item;
         option.textContent = item;
-
         division.appendChild(option);
-
     });
 
 });
