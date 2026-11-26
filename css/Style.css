@@ -1,114 +1,71 @@
-body{
-    background-color:whitesmoke;
-}
-.school-logo {
-    width: auto;
-    height: 90px;
-    display: block;
-    margin-left: auto;
-}
-
-.welcome-text {
-    text-align: center;
-}
-.submit-btn {
-    background-color: #198754;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.reset-btn {
-    background-color: #dc3545;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.star-rating span {
-    font-size: 30px;
-    margin: 5px;
-    color: gold;
-    cursor: pointer;
-}
-.stars span {
-    font-size: 32px;
-    margin: 5px;
-    color: #B8860B;
-    cursor: pointer;
-}
-
-/* Overall Website Design */
-body {
-    background-color: #F3F6FC;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    color: #183B67;
-}
-
-/* School Logo */
-.school-logo {
-    width: auto;
-    height: 90px;
-    display: block;
-    margin-left: auto;
-}
-
-/* Welcome Section */
-.welcome-text {
-    text-align: center;
-    color: #183B67;
-}
-
-/* Submit Button */
-.submit-btn {
-    background-color: #183B67;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* Reset Button */
-.reset-btn {
-    background-color: #B8860B;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* Star Ratings */
-.stars span {
-    font-size: 32px;
-    margin: 5px;
-    color: #B8860B;
-    cursor: pointer;
-}
 
 /* =================================
    1. GENERAL WEBSITE DESIGN
 ================================= */
-
 body {
-    background-color: #F3F6FC;
+    background: linear-gradient(
+        135deg,
+        #101b3d,
+        #29245c,
+        #172c50,
+        #101b3d
+    );
+    background-size: 300% 300%;
+    animation: backgroundMove 18s ease infinite;
+
     font-family: Arial, Helvetica, sans-serif;
     color: #26364A;
     margin: 0;
     padding: 25px;
     text-align: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* Animated gradient */
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 /* =================================
-   2. SCHOOL LOGO
+   2. FLOATING FESTIVE PARTICLES
 ================================= */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        radial-gradient(circle, #FFD700 2px, transparent 3px),
+        radial-gradient(circle, #FFFFFF 1.5px, transparent 3px),
+        radial-gradient(circle, #E7B9FF 2px, transparent 3px);
+    background-size: 150px 150px, 210px 210px, 260px 260px;
+    background-position: 0 0, 60px 80px, 120px 30px;
+    animation: particlesFloat 22s linear infinite;
+}
 
+body::after {
+    opacity: 0.45;
+    animation-duration: 32s;
+    animation-direction: reverse;
+}
+
+@keyframes particlesFloat {
+    from {
+        background-position: 0 0, 60px 80px, 120px 30px;
+    }
+    to {
+        background-position: 0 -450px, 60px -550px, 120px -350px;
+    }
+}
+
+/* =================================
+   3. SCHOOL LOGO
+================================= */
 .school-logo {
     width: auto;
     height: 90px;
@@ -117,36 +74,33 @@ body {
     margin-right: 20px;
 }
 
-
 /* =================================
-   3. WELCOME SECTION
+   4. WELCOME SECTION
 ================================= */
-
 .welcome-text {
     text-align: center;
     margin: 25px auto;
+    color: #FFFFFF;
 }
 
 .welcome-text h1 {
-    color: #183B67;
+    color: #FFFFFF;
     font-size: 34px;
 }
 
 .welcome-text h2 {
-    color: #B8860B;
+    color: #FFD700;
     font-size: 25px;
 }
 
 .welcome-text p {
-    color: #52647A;
+    color: #E4EAF5;
     font-size: 16px;
 }
 
-
 /* =================================
-   4. SECTION HEADINGS
+   5. SECTION HEADINGS
 ================================= */
-
 h2 {
     color: #183B67;
 }
@@ -155,11 +109,9 @@ h3 {
     color: #B8860B;
 }
 
-
 /* =================================
-   5. PERSONAL DETAILS SECTION
+   6. PERSONAL DETAILS SECTION
 ================================= */
-
 .personal-details {
     background-color: #FFFFFF;
     color: #183B67;
@@ -167,7 +119,13 @@ h3 {
     margin: 25px auto;
     border-radius: 12px;
     max-width: 600px;
-    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-details:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 25px rgba(0, 0, 0, 0.22);
 }
 
 .personal-details label {
@@ -177,7 +135,8 @@ h3 {
     margin-top: 12px;
 }
 
-.personal-details input {
+.personal-details input,
+.personal-details select {
     width: 80%;
     padding: 11px;
     margin: 8px;
@@ -188,11 +147,9 @@ h3 {
     background-color: #F8FAFD;
 }
 
-
 /* =================================
-   6. RATINGS SECTION
+   7. RATINGS SECTION
 ================================= */
-
 .ratings {
     background-color: #FFFFFF;
     color: #26364A;
@@ -200,7 +157,7 @@ h3 {
     margin: 25px auto;
     border-radius: 12px;
     max-width: 700px;
-    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
 .ratings h2 {
@@ -211,18 +168,23 @@ h3 {
     color: #B8860B;
 }
 
+/* Star ratings */
 .stars span {
     font-size: 32px;
     margin: 5px;
     color: #B8860B;
     cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
+.stars span:hover {
+    transform: scale(1.25);
+}
 
 /* =================================
-   7. REVIEWS AND SUGGESTIONS
+   8. REVIEWS AND SUGGESTIONS
 ================================= */
-
 .reviews {
     background-color: #FFFFFF;
     color: #26364A;
@@ -230,7 +192,7 @@ h3 {
     margin: 25px auto;
     border-radius: 12px;
     max-width: 700px;
-    box-shadow: 0 3px 12px rgba(24, 59, 103, 0.10);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
 .reviews h2 {
@@ -257,23 +219,21 @@ h3 {
     resize: vertical;
 }
 
-
 /* =================================
-   8. INPUT AND TEXTAREA FOCUS
+   9. INPUT FOCUS EFFECT
 ================================= */
-
 input:focus,
+select:focus,
 textarea:focus {
     outline: none;
-    border: 2px solid #183B67;
+    border: 2px solid #B8860B;
     background-color: #FFFFFF;
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
 }
 
-
 /* =================================
-   9. SUBMIT BUTTON
+   10. SUBMIT BUTTON
 ================================= */
-
 .submit-btn {
     background-color: #183B67;
     color: #FFFFFF;
@@ -284,17 +244,17 @@ textarea:focus {
     font-weight: bold;
     cursor: pointer;
     margin: 12px;
+    transition: all 0.25s ease;
 }
 
 .submit-btn:hover {
-    background-color: #102B4D;
+    background-color: #B8860B;
+    transform: translateY(-3px);
 }
 
-
 /* =================================
-   10. RESET BUTTON
+   11. RESET BUTTON
 ================================= */
-
 .reset-btn {
     background-color: #B8860B;
     color: #FFFFFF;
@@ -304,17 +264,17 @@ textarea:focus {
     font-size: 16px;
     cursor: pointer;
     margin: 12px;
+    transition: all 0.25s ease;
 }
 
 .reset-btn:hover {
     background-color: #946B08;
+    transform: translateY(-3px);
 }
 
-
 /* =================================
-   11. THANK YOU PAGE
+   12. THANK YOU PAGE
 ================================= */
-
 .thankyou-container {
     background-color: #FFFFFF;
     color: #26364A;
@@ -322,7 +282,7 @@ textarea:focus {
     margin: 100px auto;
     padding: 40px 25px;
     border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(24, 59, 103, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
     text-align: center;
 }
 
@@ -339,3 +299,49 @@ textarea:focus {
     color: #52647A;
     font-size: 16px;
 }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body::before,
+    body::after {
+        animation: none;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
+
+/* =================================
+   PROFESSIONAL BACKGROUND UPGRADE
+================================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(54, 78, 130, 0.35),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(151, 119, 55, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #10182d,
+            #182642,
+            #10182d
+        );
+
+    background-attachment: fixed;
+}
+
+/* Make existing decorative particles more subtle */
+body::before,
+body::after {
+    opacity: 0.18;
+}
+
